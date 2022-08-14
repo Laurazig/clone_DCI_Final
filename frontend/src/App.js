@@ -2,7 +2,7 @@ import LandingPage from "./views/landingpage/LandingPage";
 import RegisterPage from './views/registerpage/RegisterPage';
 import Navbar from "./components/globalComponents/navbar/Navbar";
 import LoginPage from "./views/loginpage/LoginPage";
-import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import HowItWorksPage from "./views/howitworks/HowItWorksPage";
 import SupportPage from "./views/support/SupportPage";
 import CommunityPage from "./views/community/CommunityPage";
@@ -19,7 +19,7 @@ function App() {
   const [cart, setCart] = useState([]);
   const [orders, setOrders] = useState([]);
   const [user, setUser] = useState([]);
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  //const [isLoggedIn, setIsLoggedIn] = useState(false)
   useEffect(() => {
     fetch(process.env.REACT_APP_SERVER_URL + "/meals")
       .then(res => res.json())

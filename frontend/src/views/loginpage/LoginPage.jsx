@@ -49,7 +49,7 @@ const LoginPage = (props) => {
 
     try {
       if (response.ok) {
-        props.setIsLoggedIn(true);
+        // props.setIsLoggedIn(true);
         setUser(parsedRes);
         navigate("/meals");
       } else {

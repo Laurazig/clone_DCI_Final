@@ -4,7 +4,7 @@ import { MyContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import "./registerPage.scss";
 
-const Register = (props) => {
+const Register = () => {
   const { setUser } = useContext(MyContext);
   let navigate = useNavigate();
 
@@ -54,7 +54,6 @@ const Register = (props) => {
     const parsedRes = await response.json();
     try {
       if (response.ok) {
-        props.setIsLoggedIn(true);
         setUser(parsedRes);
         navigate("/login");
       } else {
@@ -64,11 +63,6 @@ const Register = (props) => {
       alert(err.message);
     }
   };
-  // const updateShowLogin = () =>
-  // {
-  //   props.setShowLogin( true );
-  // };
-
   return (
     <div className="registerPage">
       <div className="formContainer">
@@ -77,7 +71,6 @@ const Register = (props) => {
         <form onSubmit={registerUser} className={"registerForm"}>
           <div className="inputLeft">
             <label>Contact information:</label>
-
             <input
               name="firstName"
               onChange={updateData}
@@ -90,7 +83,6 @@ const Register = (props) => {
               value={lastName}
               placeholder={"Last Name"}
             />
-
             <input
               name="email"
               onChange={updateData}
@@ -104,7 +96,6 @@ const Register = (props) => {
               placeholder={"Create Password"}
               type={password}
             />
-            {/* to check the match Create Password and Confirm password */}
             <input
               name="confirmPassword"
               onChange={updateData}
@@ -145,11 +136,6 @@ const Register = (props) => {
         </form>
         {/* <button onClick={ updateShowLogin }>Already registered? Log in to your account!</button> */}
       </div>
-
-      {/* <div className="goToRegisterSection">
-    <h1>New Users get 50% off !</h1>
-
-    </div> */}
     </div>
   );
 };

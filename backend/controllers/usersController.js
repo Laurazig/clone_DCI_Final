@@ -2,7 +2,7 @@ import User from "../models/user.js";
 import createError from "http-errors";
 
 // ==============================================
-// GET the logged in Meals's data 
+// GET the logged in Meals's data - display  *change employee to user*
 // ==============================================
 
 export const getMealsData = async (req, res, next) => {
@@ -32,7 +32,7 @@ export const getMealsData = async (req, res, next) => {
 }
 
 // =======================================================
-// POST a new meal to the meals page
+// ? POST a new meal to the meals page  is this for company database or userMeal selection???*for employees which we will not have to create****
 // =======================================================
 
 export const updatedMeals = async (req, res, next) => {
@@ -74,7 +74,7 @@ export const updatedMeals = async (req, res, next) => {
 }
 
 // =======================================================
-// DELETE all meals from the page
+// DELETE all meals from the page *?is this emloyee to delete all in database?*
 // ==========================================================
 export const deleteAllMeals = async (req, res, next) => {
     const employeeId = req.params.id;
@@ -92,7 +92,7 @@ export const deleteAllMeals = async (req, res, next) => {
     res.json(foundEmployee.meals)
 }
 // =============================================================
-// DELETE a single meal from the page
+// DELETE a single meal from the page  /***is Sameer using this? */
 // =============================================================
 export const deleteSingleMeal = async (req, res, next) => {
     const employeeId = req.params.id;
@@ -117,7 +117,7 @@ export const deleteSingleMeal = async (req, res, next) => {
 
 
 //=============================================================
-// DELETE a customer or employee account
+// DELETE a customer or employee account //*change to user and can delete their own?* 
 // =============================================================
 
 export const deleteAccount = async (req, res, next) => {
@@ -134,7 +134,7 @@ export const deleteAccount = async (req, res, next) => {
 }
 
 //=============================================================
-// PATCH an order
+// PATCH an order  **change customer to user*
 // =============================================================
 
 export const updatedOrder = async (req, res, next) => {

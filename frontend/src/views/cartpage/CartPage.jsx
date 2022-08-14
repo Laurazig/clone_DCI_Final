@@ -32,7 +32,6 @@ const getAddress = (e) => {
       street: e.target.stn.value,
       postcode: e.target.pc.value,
       city: e.target.city.value,
-      country: e.target.country.value,
     };
     console.log(userAddress);
     e.target.reset();

@@ -2,7 +2,17 @@ import Meal from "../models/meal.js";
 import createError from "http-errors";
 
 //=====================================
-//POST route not used. Needed for admin to add meals in database (postman?)
+//GET route - get all meals from database & display on meals page
+//=====================================
+
+export const mealGet = async (req, res, next)=>{
+    const meals = await Meal.find()
+    res.send(meals)
+    }
+    
+
+//=====================================
+//X POST route not used. Needed for admin to add meals in database (postman?)
 //=====================================
 
 export const mealPost = async (req, res, next) => {
@@ -37,13 +47,4 @@ export const mealPost = async (req, res, next) => {
 
 };
 
-//=====================================
-//GET route - get all meals from database & display on meals page
-//=====================================
-
-export const mealGet = async (req, res, next)=>{
-const meals = await Meal.find()
-res.send(meals)
-
-}
 
