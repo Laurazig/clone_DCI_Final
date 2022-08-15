@@ -118,7 +118,7 @@ const getAddress = (e) => {
             return (
               <div key={meal._id}>
                 <img src={meal.img} width="100" alt="" />
-                <h2>{meal.meal}</h2>
+                <h2>{meal.mealName}</h2>
                 <p>{meal.price}</p>
                 <div className={"deleteCartItems"}> <h3>
                   quantity :  {/* <button className={"cartButtons"}onClick={ deleteItem}>-</button> <span> </span> */}
@@ -163,10 +163,10 @@ const getAddress = (e) => {
           <input type="number" name="pc" />
         </label>
         <br />
-        <label>
+        {/* <label>
           Country
           <input type="text" name="country" />
-        </label>
+        </label> */}
         <br />
         <input type="submit" value="add" />
       </form>
